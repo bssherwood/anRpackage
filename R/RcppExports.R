@@ -21,3 +21,7 @@ rcpparma_bothproducts <- function(x) {
     .Call(`_anRpackage_rcpparma_bothproducts`, x)
 }
 
+multiplyNumbers <- function(x, y) {
+    .Call(`_anRpackage_multiplyNumbers`, x, y)
+}
+
