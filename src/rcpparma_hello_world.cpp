@@ -61,3 +61,5 @@ Rcpp::List rcpparma_bothproducts(const arma::colvec & x) {
     return Rcpp::List::create(Rcpp::Named("outer")=op,
                               Rcpp::Named("inner")=ip);
 }
+
+
