@@ -62,4 +62,8 @@ Rcpp::List rcpparma_bothproducts(const arma::colvec & x) {
                               Rcpp::Named("inner")=ip);
 }
 
+// [[Rcpp::export]]
+double multiplyNumbers(double x, double y) {
+  return x * y;
+}
 
