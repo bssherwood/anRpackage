@@ -11,76 +11,73 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// rcpparma_hello_world
-arma::mat rcpparma_hello_world();
-RcppExport SEXP _anRpackage_rcpparma_hello_world() {
+// stlSort
+NumericVector stlSort(NumericVector x);
+RcppExport SEXP _rqPen_stlSort(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpparma_hello_world());
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(stlSort(x));
     return rcpp_result_gen;
 END_RCPP
 }
-// rcpparma_outerproduct
-arma::mat rcpparma_outerproduct(const arma::colvec& x);
-RcppExport SEXP _anRpackage_rcpparma_outerproduct(SEXP xSEXP) {
+// findIndices
+NumericVector findIndices(NumericVector x, int k);
+RcppExport SEXP _rqPen_findIndices(SEXP xSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_outerproduct(x));
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    rcpp_result_gen = Rcpp::wrap(findIndices(x, k));
     return rcpp_result_gen;
 END_RCPP
 }
-// addTwoNumbers
-double addTwoNumbers(double x, double y);
-RcppExport SEXP _anRpackage_addTwoNumbers(SEXP xSEXP, SEXP ySEXP) {
+// rqLossAug
+NumericVector rqLossAug(NumericVector r, NumericVector tau);
+RcppExport SEXP _rqPen_rqLossAug(SEXP rSEXP, SEXP tauSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type y(ySEXP);
-    rcpp_result_gen = Rcpp::wrap(addTwoNumbers(x, y));
+    Rcpp::traits::input_parameter< NumericVector >::type r(rSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type tau(tauSEXP);
+    rcpp_result_gen = Rcpp::wrap(rqLossAug(r, tau));
     return rcpp_result_gen;
 END_RCPP
 }
-// rcpparma_innerproduct
-double rcpparma_innerproduct(const arma::colvec& x);
-RcppExport SEXP _anRpackage_rcpparma_innerproduct(SEXP xSEXP) {
+// rqHuberDerivAug
+NumericVector rqHuberDerivAug(NumericVector r, NumericVector tau, double gamma);
+RcppExport SEXP _rqPen_rqHuberDerivAug(SEXP rSEXP, SEXP tauSEXP, SEXP gammaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_innerproduct(x));
+    Rcpp::traits::input_parameter< NumericVector >::type r(rSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type tau(tauSEXP);
+    Rcpp::traits::input_parameter< double >::type gamma(gammaSEXP);
+    rcpp_result_gen = Rcpp::wrap(rqHuberDerivAug(r, tau, gamma));
     return rcpp_result_gen;
 END_RCPP
 }
-// rcpparma_bothproducts
-Rcpp::List rcpparma_bothproducts(const arma::colvec& x);
-RcppExport SEXP _anRpackage_rcpparma_bothproducts(SEXP xSEXP) {
+// negGradientAug
+NumericVector negGradientAug(NumericVector r, arma::vec weights, NumericVector tau, double gamma, arma::sp_mat x, int ntau);
+RcppExport SEXP _rqPen_negGradientAug(SEXP rSEXP, SEXP weightsSEXP, SEXP tauSEXP, SEXP gammaSEXP, SEXP xSEXP, SEXP ntauSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_bothproducts(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// multiplyNumbers
-double multiplyNumbers(double x, double y);
-RcppExport SEXP _anRpackage_multiplyNumbers(SEXP xSEXP, SEXP ySEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type y(ySEXP);
-    rcpp_result_gen = Rcpp::wrap(multiplyNumbers(x, y));
+    Rcpp::traits::input_parameter< NumericVector >::type r(rSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type weights(weightsSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type tau(tauSEXP);
+    Rcpp::traits::input_parameter< double >::type gamma(gammaSEXP);
+    Rcpp::traits::input_parameter< arma::sp_mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type ntau(ntauSEXP);
+    rcpp_result_gen = Rcpp::wrap(negGradientAug(r, weights, tau, gamma, x, ntau));
     return rcpp_result_gen;
 END_RCPP
 }
 // weightedNorm
 double weightedNorm(Rcpp::NumericVector x, Rcpp::NumericVector normweights);
-RcppExport SEXP _anRpackage_weightedNorm(SEXP xSEXP, SEXP normweightsSEXP) {
+RcppExport SEXP _rqPen_weightedNorm(SEXP xSEXP, SEXP normweightsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -90,19 +87,28 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-
-static const R_CallMethodDef CallEntries[] = {
-    {"_anRpackage_rcpparma_hello_world", (DL_FUNC) &_anRpackage_rcpparma_hello_world, 0},
-    {"_anRpackage_rcpparma_outerproduct", (DL_FUNC) &_anRpackage_rcpparma_outerproduct, 1},
-    {"_anRpackage_addTwoNumbers", (DL_FUNC) &_anRpackage_addTwoNumbers, 2},
-    {"_anRpackage_rcpparma_innerproduct", (DL_FUNC) &_anRpackage_rcpparma_innerproduct, 1},
-    {"_anRpackage_rcpparma_bothproducts", (DL_FUNC) &_anRpackage_rcpparma_bothproducts, 1},
-    {"_anRpackage_multiplyNumbers", (DL_FUNC) &_anRpackage_multiplyNumbers, 2},
-    {"_anRpackage_weightedNorm", (DL_FUNC) &_anRpackage_weightedNorm, 2},
-    {NULL, NULL, 0}
-};
-
-RcppExport void R_init_anRpackage(DllInfo *dll) {
-    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
-    R_useDynamicSymbols(dll, FALSE);
+// solvebetaCpp
+List solvebetaCpp(arma::sp_mat x, arma::vec y, int n, NumericVector tau, double gamma, arma::vec weights, NumericVector groupIndex, double lambdaj, NumericVector wlambda, NumericVector wtau, NumericVector eigenval, NumericVector betaini, int maxIter, double epsilon, int ntau);
+RcppExport SEXP _rqPen_solvebetaCpp(SEXP xSEXP, SEXP ySEXP, SEXP nSEXP, SEXP tauSEXP, SEXP gammaSEXP, SEXP weightsSEXP, SEXP groupIndexSEXP, SEXP lambdajSEXP, SEXP wlambdaSEXP, SEXP wtauSEXP, SEXP eigenvalSEXP, SEXP betainiSEXP, SEXP maxIterSEXP, SEXP epsilonSEXP, SEXP ntauSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::sp_mat >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type y(ySEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type tau(tauSEXP);
+    Rcpp::traits::input_parameter< double >::type gamma(gammaSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type weights(weightsSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type groupIndex(groupIndexSEXP);
+    Rcpp::traits::input_parameter< double >::type lambdaj(lambdajSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type wlambda(wlambdaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type wtau(wtauSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type eigenval(eigenvalSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type betaini(betainiSEXP);
+    Rcpp::traits::input_parameter< int >::type maxIter(maxIterSEXP);
+    Rcpp::traits::input_parameter< double >::type epsilon(epsilonSEXP);
+    Rcpp::traits::input_parameter< int >::type ntau(ntauSEXP);
+    rcpp_result_gen = Rcpp::wrap(solvebetaCpp(x, y, n, tau, gamma, weights, groupIndex, lambdaj, wlambda, wtau, eigenval, betaini, maxIter, epsilon, ntau));
+    return rcpp_result_gen;
+END_RCPP
 }

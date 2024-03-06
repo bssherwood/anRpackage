@@ -1,4 +1,4 @@
-#' Multiply two numbers
+#' Weighted Norm example
 #'
 #' This function multiplies two numbers.
 #'
@@ -8,9 +8,9 @@
 #' @return The product of x and y.
 #'
 #' @examples
-#' multiply_numbers(2, 3)
+#' weightedNorm(2, 3)
 #'
 #' @export
-multiply_numbers <- function(x, y) {
-  multiplyNumbers(x,y)
+wNorm <- function(x, y) {
+  weightedNorm(x,y)
 }
