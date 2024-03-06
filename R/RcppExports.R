@@ -25,3 +25,7 @@ multiplyNumbers <- function(x, y) {
     .Call(`_anRpackage_multiplyNumbers`, x, y)
 }
 
+weightedNorm <- function(x, normweights) {
+    .Call(`_anRpackage_weightedNorm`, x, normweights)
+}
+

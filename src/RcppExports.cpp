@@ -78,6 +78,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// weightedNorm
+double weightedNorm(Rcpp::NumericVector x, Rcpp::NumericVector normweights);
+RcppExport SEXP _anRpackage_weightedNorm(SEXP xSEXP, SEXP normweightsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type normweights(normweightsSEXP);
+    rcpp_result_gen = Rcpp::wrap(weightedNorm(x, normweights));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_anRpackage_rcpparma_hello_world", (DL_FUNC) &_anRpackage_rcpparma_hello_world, 0},
@@ -86,6 +98,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_anRpackage_rcpparma_innerproduct", (DL_FUNC) &_anRpackage_rcpparma_innerproduct, 1},
     {"_anRpackage_rcpparma_bothproducts", (DL_FUNC) &_anRpackage_rcpparma_bothproducts, 1},
     {"_anRpackage_multiplyNumbers", (DL_FUNC) &_anRpackage_multiplyNumbers, 2},
+    {"_anRpackage_weightedNorm", (DL_FUNC) &_anRpackage_weightedNorm, 2},
     {NULL, NULL, 0}
 };
 

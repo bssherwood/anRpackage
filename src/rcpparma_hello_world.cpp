@@ -67,3 +67,15 @@ double multiplyNumbers(double x, double y) {
   return x * y;
 }
 
+/* l2norm weighted */
+// [[Rcpp::export]]
+double weightedNorm(Rcpp::NumericVector x, Rcpp::NumericVector normweights) {
+  double result = 0.0;
+  int n = x.size();
+  
+  for (int i = 0; i < n; i++) {
+    result += normweights[i] * x[i] * x[i];
+  }
+  
+  return sqrt(result);
+}
