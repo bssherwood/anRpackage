@@ -13,7 +13,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // stlSort
 NumericVector stlSort(NumericVector x);
-RcppExport SEXP _rqPen_stlSort(SEXP xSEXP) {
+RcppExport SEXP _anRpackage_stlSort(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -24,7 +24,7 @@ END_RCPP
 }
 // findIndices
 NumericVector findIndices(NumericVector x, int k);
-RcppExport SEXP _rqPen_findIndices(SEXP xSEXP, SEXP kSEXP) {
+RcppExport SEXP _anRpackage_findIndices(SEXP xSEXP, SEXP kSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -36,7 +36,7 @@ END_RCPP
 }
 // rqLossAug
 NumericVector rqLossAug(NumericVector r, NumericVector tau);
-RcppExport SEXP _rqPen_rqLossAug(SEXP rSEXP, SEXP tauSEXP) {
+RcppExport SEXP _anRpackage_rqLossAug(SEXP rSEXP, SEXP tauSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -48,7 +48,7 @@ END_RCPP
 }
 // rqHuberDerivAug
 NumericVector rqHuberDerivAug(NumericVector r, NumericVector tau, double gamma);
-RcppExport SEXP _rqPen_rqHuberDerivAug(SEXP rSEXP, SEXP tauSEXP, SEXP gammaSEXP) {
+RcppExport SEXP _anRpackage_rqHuberDerivAug(SEXP rSEXP, SEXP tauSEXP, SEXP gammaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -61,7 +61,7 @@ END_RCPP
 }
 // negGradientAug
 NumericVector negGradientAug(NumericVector r, arma::vec weights, NumericVector tau, double gamma, arma::sp_mat x, int ntau);
-RcppExport SEXP _rqPen_negGradientAug(SEXP rSEXP, SEXP weightsSEXP, SEXP tauSEXP, SEXP gammaSEXP, SEXP xSEXP, SEXP ntauSEXP) {
+RcppExport SEXP _anRpackage_negGradientAug(SEXP rSEXP, SEXP weightsSEXP, SEXP tauSEXP, SEXP gammaSEXP, SEXP xSEXP, SEXP ntauSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -77,7 +77,7 @@ END_RCPP
 }
 // weightedNorm
 double weightedNorm(Rcpp::NumericVector x, Rcpp::NumericVector normweights);
-RcppExport SEXP _rqPen_weightedNorm(SEXP xSEXP, SEXP normweightsSEXP) {
+RcppExport SEXP _anRpackage_weightedNorm(SEXP xSEXP, SEXP normweightsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -89,7 +89,7 @@ END_RCPP
 }
 // solvebetaCpp
 List solvebetaCpp(arma::sp_mat x, arma::vec y, int n, NumericVector tau, double gamma, arma::vec weights, NumericVector groupIndex, double lambdaj, NumericVector wlambda, NumericVector wtau, NumericVector eigenval, NumericVector betaini, int maxIter, double epsilon, int ntau);
-RcppExport SEXP _rqPen_solvebetaCpp(SEXP xSEXP, SEXP ySEXP, SEXP nSEXP, SEXP tauSEXP, SEXP gammaSEXP, SEXP weightsSEXP, SEXP groupIndexSEXP, SEXP lambdajSEXP, SEXP wlambdaSEXP, SEXP wtauSEXP, SEXP eigenvalSEXP, SEXP betainiSEXP, SEXP maxIterSEXP, SEXP epsilonSEXP, SEXP ntauSEXP) {
+RcppExport SEXP _anRpackage_solvebetaCpp(SEXP xSEXP, SEXP ySEXP, SEXP nSEXP, SEXP tauSEXP, SEXP gammaSEXP, SEXP weightsSEXP, SEXP groupIndexSEXP, SEXP lambdajSEXP, SEXP wlambdaSEXP, SEXP wtauSEXP, SEXP eigenvalSEXP, SEXP betainiSEXP, SEXP maxIterSEXP, SEXP epsilonSEXP, SEXP ntauSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -111,4 +111,20 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(solvebetaCpp(x, y, n, tau, gamma, weights, groupIndex, lambdaj, wlambda, wtau, eigenval, betaini, maxIter, epsilon, ntau));
     return rcpp_result_gen;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_anRpackage_stlSort", (DL_FUNC) &_anRpackage_stlSort, 1},
+    {"_anRpackage_findIndices", (DL_FUNC) &_anRpackage_findIndices, 2},
+    {"_anRpackage_rqLossAug", (DL_FUNC) &_anRpackage_rqLossAug, 2},
+    {"_anRpackage_rqHuberDerivAug", (DL_FUNC) &_anRpackage_rqHuberDerivAug, 3},
+    {"_anRpackage_negGradientAug", (DL_FUNC) &_anRpackage_negGradientAug, 6},
+    {"_anRpackage_weightedNorm", (DL_FUNC) &_anRpackage_weightedNorm, 2},
+    {"_anRpackage_solvebetaCpp", (DL_FUNC) &_anRpackage_solvebetaCpp, 15},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_anRpackage(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }

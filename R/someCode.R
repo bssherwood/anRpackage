@@ -8,7 +8,7 @@
 #' @return The product of x and y.
 #'
 #' @examples
-#' weightedNorm(2, 3)
+#' wNorm(2, 3)
 #'
 #' @export
 wNorm <- function(x, y) {
