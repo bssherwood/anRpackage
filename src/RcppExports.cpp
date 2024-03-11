@@ -113,6 +113,9 @@ BEGIN_RCPP
 END_RCPP
 }
 
+RcppExport void penderiv(void *, void *, void *, void *, void *);
+RcppExport void QCD(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+
 static const R_CallMethodDef CallEntries[] = {
     {"_anRpackage_stlSort", (DL_FUNC) &_anRpackage_stlSort, 1},
     {"_anRpackage_findIndices", (DL_FUNC) &_anRpackage_findIndices, 2},
@@ -121,6 +124,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_anRpackage_negGradientAug", (DL_FUNC) &_anRpackage_negGradientAug, 6},
     {"_anRpackage_weightedNorm", (DL_FUNC) &_anRpackage_weightedNorm, 2},
     {"_anRpackage_solvebetaCpp", (DL_FUNC) &_anRpackage_solvebetaCpp, 15},
+    {"penderiv", (DL_FUNC) &penderiv,  5},
+    {"QCD",      (DL_FUNC) &QCD,      11},
+    {"rqbr",  (DL_FUNC) &F77_NAME(rqbr),  27},
+    {"rqfnb", (DL_FUNC) &F77_NAME(rqfnb), 13},
     {NULL, NULL, 0}
 };
 
